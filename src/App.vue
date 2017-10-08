@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-    <router-link v-bind:to="'/'">Home</router-link>
-    <router-link v-bind:to="'/food'">Food</router-link>
+    <h3>Birthday Foods</h3>
     <router-view></router-view>
   </div>
 </template>
