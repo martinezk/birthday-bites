@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Login from '@/components/Login'
-import Food from '@/components/Food'
+import Search from '@/components/Search'
+import axios from 'axios'
 
 Vue.use(Router)
 
@@ -13,9 +14,9 @@ export default new Router({
       component: Login
     },
     {
-      path: '/food',
-      name: 'Food',
-      component: Food
+      path: '/search',
+      name: 'Search',
+      component: Search
     }
   ],
   //prevent hashes in URL

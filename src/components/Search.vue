@@ -1,5 +1,5 @@
 <template>
-  <div id="food" class="container">
+  <div id="search" class="container">
     <div class="form-group row">
       <label for="search-input" class="col-2 col-form-label">Enter Birthdate</label>
       <div class="col-8">
@@ -10,9 +10,8 @@
       <div class="col-sm-4" v-bind:key="result.title" v-for="result in results">
         <div class="card">
           <div class="card-block">
-            <h4 class="card-title">{{ result.title }}</h4>
-            <p class="card-text">{{ result.abstract }}</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <h4 class="card-title featured">{{ result.recalling_firm }}</h4>
+            <p class="card-text">{{ result.product_description }}</p>
           </div>
         </div>
       </div>
@@ -22,8 +21,20 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
-  props: ['result'],
+  data() {
+    return {
+      results: []
+    }
+  },
+      mounted() {
+      axios.get("https://api.fda.gov/food/enforcement.json?search=report_date:[20040101+TO+20131231]&limit=6")
+        .then(response => { this.results = response.data.results })
+    }
+  }
+/*export default {
   data() {
     return {
       results: [
@@ -34,11 +45,11 @@ export default {
       ]
     };
   }
-};
+};*/
 </script>
 <!-- styling for the component -->
 <style>
-#food {
+#search {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

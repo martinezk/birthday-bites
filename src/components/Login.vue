@@ -14,7 +14,7 @@
                 <label for="key" class="sr-only">Password</label>
                 <input type="password" name="key" id="key" class="form-control" placeholder="Password">
               </div>
-              <router-link v-bind:to="'/food'">
+              <router-link v-bind:to="'/search'">
               <input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Log in">
               </router-link>
             </form>
