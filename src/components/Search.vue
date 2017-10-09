@@ -6,27 +6,14 @@
           <div class="form-group">
             <div class="input-group">
               <span class="input-group-addon" id="month-addon">Month: </span>
-              <select name="control-month" class="form-control" aria-describedby="month-addon">
-                <option>January</option>
-                <option>February</option>
-                <option>March</option>
-                <option>April</option>
-                <option>May</option>
-                <option>June</option>
-                <option>July</option>
-                <option>August</option>
-                <option>September</option>
-                <option>Octomber</option>
-                <option>November</option>
-                <option>December</option>
+              <select name="month" class="form-control" aria-describedby="month-addon">
+                <option v-for="month in 12" v-bind:key="month.index">{{ month }}</option>
               </select>
               <span class="input-group-addon" id="day-addon">Day: </span>
-              <select name="control-day" class="form-control" aria-describedby="day-addon">
-                <option selected="selected">1</option>
-                <option>2</option>
-                <option>3</option>
+              <select name="day" class="form-control" aria-describedby="day-addon">
+                <option v-for="day in 31" v-bind:key="day.index">{{ day }}</option>
               </select>
-              <div class="btn btn-primary">Search</div>
+              <button v-on:click="searchButton" class="btn btn-primary">Search</button>
             </div>
           </div>
         </form>
@@ -68,7 +55,11 @@ export default {
       axios.get(url).then((response) => {
         this.results = response.data.results;
       }).catch(error => { console.log(error); });
-    }
+    },
+    searchButton: function (event) {
+      alert(this.month)
+    },
+    date: "recall_initiation_date"
   }
 }
 </script>
