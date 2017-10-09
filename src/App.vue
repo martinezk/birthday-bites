@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h3>What <strong>not</strong> to eat on your birthday</h3>
+    <h3>What <strong>not</strong> to eat on your birthday!</h3>
     <router-view></router-view>
   </div>
 </template>
