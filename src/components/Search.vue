@@ -8,16 +8,16 @@
             <label for="date-input">Date</label>
             </div>
             <div class="col">
-            <input v-model="birthDay" class="form-control" type="date" value="2017-01-01" max="2017-09-30">
+            <input v-model="birthDay" class="form-control" type="date" value="2017-01-01" min= "2015-01-01" max="2017-09-30">
             </div>
           </div>
         </form>
       </div>
     </div>
     <hr />
-    <span>{{ result }}</span>
+    <span>{{ message }}</span>
     <div class="row">
-      <div class="col-sm-4" v-bind:key="result.index" v-for="result in results">
+      <div class="center" v-bind:key="result.index" v-for="result in results">
         <div class="card">
           <div class="card-block">
             <h4 class="card-title featured">{{ result.recalling_firm }}</h4>
@@ -41,7 +41,8 @@ export default {
   data() {
     return {
       birthDay: '',
-      results: []
+      results: [],
+      message: ''
     }
   },
   watch: {
@@ -54,15 +55,17 @@ export default {
   },
   methods: {
     fetchItems: function() {
-      let app = this
-      let url = "https://api.fda.gov/food/enforcement.json?search=report_date:" + app.birthDay
-      app.results = "Searching..."
+      const app = this;
+      const url = "https://api.fda.gov/food/enforcement.json?search=report_date:" + app.birthDay;
+      app.message = "Searching...";
+      app.results = [];
       axios.get(url)
         .then(function(response) {
-          app.results = response.data
+          app.results = response.data.results;
+          app.message = '';
         })
         .catch(function(error) {
-          app.results = "You can eat anything you want"
+          app.message = "You can eat anything you want";
         })
     }
 

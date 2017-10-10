@@ -3,13 +3,6 @@
 A web app to show what foods may not be the best to eat around your birthday according to FDA reports about food recalls
 
 
-### Prerequisites
-
-What things you need to install the software and how to install them
-
-```
-axios
-```
 
 ## Build Setup
 
@@ -30,9 +23,6 @@ npm run build
 npm test
 ```
 
-## Deployment
-
-Add additional notes about how to deploy this on a live system
 
 ## Built With
 
