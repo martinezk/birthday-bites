@@ -1,34 +1,35 @@
 <template>
   <div id="search" class="container">
+    <h5 class="heading">Choose your birthday from 2015 to now and view whether a food was recalled on that day</h5>
     <div class="row">
       <div class="center">
         <form class="form-inline">
           <div class="form-group">
             <div class="col">
-            <label for="date-input">Date</label>
+              <label for="date-input">Date</label>
             </div>
             <div class="col">
-            <input v-model="birthDay" class="form-control" type="date" value="2017-01-01" min= "2015-01-01" max="2017-09-30">
+              <input v-model="birthDay" class="form-control" type="date" value="2017-01-01" min="2015-01-01" max="2017-10-11">
             </div>
           </div>
         </form>
       </div>
     </div>
     <hr />
-    <span>{{ message }}</span>
+    <h5>{{ message }}</h5>
     <div class="row">
-      <div class="center" v-bind:key="result.index" v-for="result in results">
-        <div class="card">
-          <div class="card-block">
-            <h4 class="card-title featured">{{ result.recalling_firm }}</h4>
-            <hr />
-            <p class="card-text">{{ result.product_description }}</p>
-          </div>
+      <div class="col-8 center" v-bind:key="result.index" v-for="result in results">
+        <div class="card-block rounded">
+          <h4 class="card-title">{{ result.recalling_firm }}</h4>
+          <p class="card-text">
+            <strong>Description: </strong>{{ result.product_description }}</p>
+          <p class="card-text">
+            <strong>Reason to Skip it:</strong> {{ result.reason_for_recall }} </p>
         </div>
       </div>
     </div>
     <footer>
-    <router-link id="link-back" v-bind:to="'/'">Back to Login page</router-link>
+      <router-link id="link-back" v-bind:to="'/'">Back to Login page</router-link>
     </footer>
   </div>
 </template>
@@ -65,7 +66,7 @@ export default {
           app.message = '';
         })
         .catch(function(error) {
-          app.message = "You can eat anything you want";
+          app.message = "Nothing recalled on this day. You can eat anything you want! Enjoy!";
         })
     }
 
@@ -75,8 +76,9 @@ export default {
 <!-- styling for the component -->
 <style>
 body {
-  background-color:#d0d4db;
+  background-color: #d0d4db;
 }
+
 #search {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -85,9 +87,11 @@ body {
   color: #2c3e50;
   margin-top: 60px;
 }
-#link-back{
+
+#link-back {
   color: white;
 }
+
 .center {
   margin-left: auto;
   margin-right: auto;
@@ -96,10 +100,28 @@ body {
 .card {
   height: 200px;
 }
+
 .card-block {
-  background-color: #8af2ab;
+  background-color: #fcfc97;
 }
+
+.card-text {
+  text-align: left;
+  padding: 10px 30px;
+}
+
+.card-title {
+  padding-top: 20px;
+}
+.heading {
+  margin-bottom: 20px;
+}
+
 .inline {
   display: inline-block;
+}
+
+footer {
+  margin: 40px;
 }
 </style>
