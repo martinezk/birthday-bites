@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h3>What <strong>not</strong> to eat on your birthday!</h3>
+    <h2>Birthday Bites</h2>
     <router-view></router-view>
   </div>
 </template>
@@ -13,11 +13,12 @@ export default {
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Poppins', 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 20px;
+  color: white;
+  margin-top: 60px;
+  margin-bottom: 40px;
 }
 </style>

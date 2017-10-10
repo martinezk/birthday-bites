@@ -4,7 +4,6 @@ import Vue from 'vue'
 import App from './App'
 import Search from './components/Search'
 import router from './router'
-import axios from 'axios'
 
 
 Vue.config.productionTip = false
