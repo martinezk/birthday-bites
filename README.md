@@ -1,10 +1,22 @@
-# wirewheel
+# Birthday Bites
 
-> A Vue.js project
+A web app to show what foods may not be the best to eat around your birthday according to FDA reports about food recalls
+
+
+### Prerequisites
+
+What things you need to install the software and how to install them
+
+```
+axios
+```
 
 ## Build Setup
 
 ``` bash
+
+### Installing
+
 # install dependencies
 npm install
 
@@ -14,14 +26,25 @@ npm run dev
 # build for production with minification
 npm run build
 
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
 # run all tests
 npm test
 ```
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## Deployment
+
+Add additional notes about how to deploy this on a live system
+
+## Built With
+
+* [vuejs](https://vuejs.org/v2/guide/) - The web framework used
+* [axios](https://maven.apache.org/) - HTTP client for API calls
+* [FDA API](https://open.fda.gov/api/) - 3rd party API 
+
+
+## Authors
+
+* **Kristina Martinez**
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
