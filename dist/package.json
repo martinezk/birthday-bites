@@ -1,0 +1,10 @@
+{
+    "name": "birthday-bites",
+    "version": "1.0.0",
+    "description": "find foods you should not eat for your birthday dinner",
+    "author": "KMartinez",
+    "private": true,
+    "scripts": {
+        "postinstall": "npm install express"
+    }
+}
