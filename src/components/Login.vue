@@ -32,19 +32,33 @@
 
 <script>
 export default {
+  data() {
+    return {
+      img: "login-background-image"
+    };
+  },
+  mounted() {
+    this.addBackground();
+  },
   methods: {
-    validateForm: function(event){
-      const form= event.target;
-      if (form.email.value !== 'somebody@example.io' || form.password.value !== 'Passw0rd' ){        
+    addBackground: function() {
+      let bgImage = document.getElementsByTagName("body")[0];
+      bgImage.className = this.img;
+    },
+    validateForm: function(event) {
+      const form = event.target;
+      if (
+        form.email.value !== "somebody@example.io" ||
+        form.password.value !== "Passw0rd"
+      ) {
         event.preventDefault();
         return false;
       }
     }
-  }  
-}
+  }
+};
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
 .center {
   margin-left: auto;
@@ -58,7 +72,7 @@ export default {
   margin-top: 100px;
 }
 
-body {
+.login-background-image {
   height: 100%;
   background-image: url(https://source.unsplash.com/collection/202618);
   background-position: center center;
