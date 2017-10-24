@@ -12,7 +12,8 @@
     "test": "npm run unit",
     "lint": "eslint --ext .js,.vue src test/unit/specs",
     "version": "npm -v",
-    "postinstall": "npm install express"
+    "postinstall": "npm install express",
+    "heroku": "git subtree push --prefix dist heroku master"
   },
   "dependencies": {
     "axios": "^0.16.2",
